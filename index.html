@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Typing Treasure Hunt</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="frame">
+    <header class="hud">
+      <div class="hud-left">
+        <div class="badge">Lvl: <span id="level">1</span></div>
+        <div class="badge">Score: <span id="score">0</span></div>
+        <div class="badge">Streak: <span id="streak">0</span></div>
+      </div>
+      <div class="hud-center">
+        <div class="timer-wrap">
+          <div id="timerBar" class="timer-bar"></div>
+        </div>
+        <div id="timerText" class="timer-text">10.0s</div>
+      </div>
+      <div class="hud-right">
+        <div id="lives" class="lives"></div>
+      </div>
+    </header>
+
+    <main class="stage">
+      <canvas id="game" width="960" height="540"></canvas>
+
+      <div class="panel">
+        <div class="prompt">
+          <div class="prompt-title">Type to open the door</div>
+          <div id="targetWord" class="target-word">loading…</div>
+          <div id="typedWord" class="typed-word"></div>
+        </div>
+        <div class="controls">
+          <button id="btnPause" class="btn">⏸ Pause</button>
+          <button id="btnResume" class="btn">▶ Resume</button>
+          <button id="btnRestart" class="btn btn-accent">↺ Restart</button>
+        </div>
+      </div>
+    </main>
+
+    <footer class="tips">
+      Tips: Type exactly what’s on the door. Backspace works. Beat the timer to avoid hazards. Clear all rooms to reach the treasure!
+    </footer>
+  </div>
+
+  <div id="overlay" class="overlay hidden">
+    <div class="modal">
+      <div id="overlayTitle" class="modal-title">Paused</div>
+      <div id="overlayMsg" class="modal-msg">Press Resume to continue</div>
+      <div class="modal-actions">
+        <button id="overlayResume" class="btn">Resume</button>
+        <button id="overlayRestart" class="btn btn-accent">Restart</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
